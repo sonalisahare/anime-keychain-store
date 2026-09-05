@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Track Order | AnimeVerse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#CDEFFC;
+}
+
+/* HEADER */
+
+.header{
+    background:#6C3EF4;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.header h1{
+    font-size:42px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:500px;
+    margin:50px auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.container h2{
+    color:#6C3EF4;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin:20px 0;
+    border:2px solid #6C3EF4;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#6C3EF4;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#5B34E0;
+}
+
+.status{
+    margin-top:30px;
+    background:#F5F7FB;
+    padding:20px;
+    border-radius:15px;
+}
+
+.status h3{
+    color:#6C3EF4;
+    margin-bottom:15px;
+}
+
+.status p{
+    margin:10px 0;
+    color:#555;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    text-decoration:none;
+    background:#6C3EF4;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+}
+
+.back:hover{
+    background:#5B34E0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📦 Track Your Order</h1>
+</div>
+
+<div class="container">
+
+<h2>Enter Your Order ID</h2>
+
+<form>
+
+<input type="text" placeholder="Example: ORD123456" required>
+
+<button type="submit">
+🔍 Track Order
+</button>
+
+</form>
+
+<div class="status">
+
+<h3>Sample Order Status</h3>
+
+<p>✅ Order Placed</p>
+
+<p>✅ Packed</p>
+
+<p>🚚 Shipped</p>
+
+<p>📍 Expected Delivery: 08 July 2026</p>
+
+</div>
+
+<center>
+
+<a href="{% url 'home' %}" class="back">
+🏠 Back to Home
+</a>
+
+</center>
+
+</div>
+
+</body>
+</html>

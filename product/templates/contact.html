@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | AnimeVerse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#CDEFFC;
+}
+
+/* HEADER */
+
+.header{
+    background:#6C3EF4;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.header h1{
+    font-size:42px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* LEFT */
+
+.contact-info{
+    flex:1;
+    min-width:300px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.contact-info h2{
+    color:#6C3EF4;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    margin:18px 0;
+    color:#555;
+    font-size:17px;
+}
+
+/* RIGHT */
+
+.contact-form{
+    flex:1;
+    min-width:300px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.contact-form h2{
+    color:#6C3EF4;
+    margin-bottom:20px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:2px solid #CDEFFC;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#6C3EF4;
+}
+
+textarea{
+    resize:none;
+    height:150px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#6C3EF4;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#5631d5;
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.home-btn:hover{
+    background:#5631d5;
+}
+
+/* FOOTER */
+
+footer{
+    background:#6C3EF4;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>📞 Contact Us</h1>
+
+<p>We'd love to hear from you!</p>
+
+</div>
+
+<div class="container">
+
+<div class="contact-info">
+
+<h2>Get In Touch</h2>
+
+<p>📍 Nagpur, Maharashtra, India</p>
+
+<p>📧 support@animeverse.com</p>
+
+<p>📱 +91 98765 43210</p>
+
+<p>🕒 Monday - Saturday</p>
+
+<p>⏰ 10:00 AM - 7:00 PM</p>
+
+<a href="{% url 'home' %}" class="home-btn">
+🏠 Back to Home
+</a>
+
+</div>
+
+<div class="contact-form">
+
+<h2>Send a Message</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<input type="text" placeholder="Subject" required>
+
+<textarea placeholder="Write your message here..." required></textarea>
+
+<button type="submit">
+📨 Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 AnimeVerse | Made with ❤️ by Sonali
+
+</footer>
+
+</body>
+</html>

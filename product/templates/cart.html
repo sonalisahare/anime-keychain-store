@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+
+<style>
+
+body{
+    background:#CDEFFC;
+    color:#333;
+    font-family:'Poppins',sans-serif;
+    margin:0;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#6C3EF4;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    display:inline-block;
+    margin:20px;
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#5B30E6;
+}
+
+/* CART */
+
+.cart-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+    padding:20px;
+}
+
+/* CARD */
+
+.card{
+    width:260px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(108,62,244,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(108,62,244,.25);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0;
+    color:#6C3EF4;
+}
+
+.price{
+    color:#6C3EF4;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.qty{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:15px;
+}
+
+.qty-btn{
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.qty-btn:hover{
+    background:#5B30E6;
+}
+
+.remove-btn{
+    display:inline-block;
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:10px;
+    margin:10px;
+    transition:.3s;
+}
+
+.remove-btn:hover{
+    background:#5B30E6;
+}
+
+.buy-btn{
+    display:inline-block;
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:bold;
+    margin:20px;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#5B30E6;
+}
+
+.total{
+    text-align:center;
+    margin:30px;
+}
+
+.total h2{
+    color:#6C3EF4;
+}
+
+.empty{
+    text-align:center;
+    font-size:30px;
+    margin-top:100px;
+    color:#6C3EF4;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    🛒 Your Cart
+</div>
+
+<a href="{% url 'home' %}" class="back-btn">
+    ← Go Back
+</a>
+
+<div class="cart-container">
+
+{% for item in cart_products %}
+
+<div class="card">
+
+    {% if item.product.image %}
+    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+    {% endif %}
+
+    <h3>{{ item.product.name }}</h3>
+
+    <p class="price">
+        ₹{{ item.product.price }}
+    </p>
+
+    <div class="qty">
+
+        <a href="{% url 'decrease' item.product.id %}" class="qty-btn">
+            ➖
+        </a>
+
+        <span>{{ item.quantity }}</span>
+
+        <a href="{% url 'increase' item.product.id %}" class="qty-btn">
+            ➕
+        </a>
+
+    </div>
+
+    <p>
+        Subtotal: ₹{{ item.subtotal }}
+    </p>
+
+    <a href="{% url 'remove_from_cart' item.product.id %}" class="remove-btn">
+        ❌ Remove
+    </a>
+
+</div>
+
+{% empty %}
+
+<div class="empty">
+    🛒 Your Cart Is Empty
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="total">
+
+    <h2>Total: ₹{{ total }}</h2>
+
+<a href="{% url 'buy' %}" class="buy-btn">
+    💳 Buy Now
+</a>
+
+</div>
+
+</body>
+</html>

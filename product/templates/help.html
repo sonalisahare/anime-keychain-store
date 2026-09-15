@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Help Center | AnimeVerse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#CDEFFC;
+}
+
+/* HEADER */
+
+.header{
+    background:#6C3EF4;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.header h1{
+    font-size:42px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+}
+
+/* HELP BOX */
+
+.help-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    margin-bottom:25px;
+}
+
+.help-box h2{
+    color:#6C3EF4;
+    margin-bottom:15px;
+}
+
+.help-box p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* BUTTON */
+
+.home-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 30px;
+    background:#6C3EF4;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.home-btn:hover{
+    background:#5B34E0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>❓ Help Center</h1>
+    <p>How can we help you today?</p>
+</div>
+
+<div class="container">
+
+<div class="help-box">
+<h2>🛍️ How do I place an order?</h2>
+<p>
+Browse your favourite anime keychains, click <b>Add to Cart</b>,
+go to your cart, and click <b>Buy Now</b> to place your order.
+</p>
+</div>
+
+<div class="help-box">
+<h2>🚚 How can I track my order?</h2>
+<p>
+Go to the <b>Track Order</b> page from the top menu and enter your Order ID to check your delivery status.
+</p>
+</div>
+
+<div class="help-box">
+<h2>💳 Which payment methods are accepted?</h2>
+<p>
+We accept UPI, Credit Cards, Debit Cards, Net Banking, and Cash on Delivery (where available).
+</p>
+</div>
+
+<div class="help-box">
+<h2>🔄 What is your return policy?</h2>
+<p>
+Products can be returned within 7 days if they are damaged or you receive the wrong item.
+</p>
+</div>
+
+<div class="help-box">
+<h2>📞 Need more help?</h2>
+<p>
+Email us at <b>support@animeverse.com</b> or visit the Contact page. Our support team is available Monday to Saturday, 10:00 AM – 7:00 PM.
+</p>
+</div>
+
+<center>
+<a href="{% url 'home' %}" class="home-btn">
+🏠 Back to Home
+</a>
+</center>
+
+</div>
+
+</body>
+</html>

@@ -147,6 +147,39 @@ def add_to_wishlist(request, product_id):
     Wishlist.objects.get_or_create(product=product)
 
     return redirect('wishlist')
+# MOVE PRODUCT FROM WISHLIST TO CART
+def move_to_cart(request, product_id):
+
+    product = get_object_or_404(Product, id=product_id)
+
+    cart = request.session.get('cart', {})
+
+    if isinstance(cart, list):
+        cart = {}
+
+    product_id = str(product_id)
+
+    if product_id in cart:
+        cart[product_id] += 1
+    else:
+        cart[product_id] = 1
+
+    request.session['cart'] = cart
+    request.session.modified = True
+
+    Wishlist.objects.filter(product=product).delete()
+
+    return redirect('cart')
+
+
+# REMOVE PRODUCT FROM WISHLIST
+def remove_from_wishlist(request, product_id):
+
+    product = get_object_or_404(Product, id=product_id)
+
+    Wishlist.objects.filter(product=product).delete()
+
+    return redirect('wishlist')
 
 
 

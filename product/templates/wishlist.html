@@ -106,9 +106,13 @@
         ₹{{ item.product.price }}
     </p>
 
-    <a href="{% url 'add_to_cart' item.product.id %}" class="btn">
-        🛒 Move to Cart
-    </a>
+    <a href="{% url 'move_to_cart' item.product.id %}" class="btn">
+    🛒 Move to Cart
+</a>
+
+<a href="{% url 'remove_from_wishlist' item.product.id %}" class="btn remove-btn">
+    ❌ Remove from Wishlist
+</a>
 
 </div>
 

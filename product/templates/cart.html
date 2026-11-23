@@ -154,7 +154,148 @@ body{
     margin-top:100px;
     color:#6C3EF4;
 }
+/* RESPONSIVE DESIGN */
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        font-size: 27px;
+        padding: 18px;
+    }
+
+    .cart-container {
+        gap: 18px;
+        padding: 15px;
+    }
+
+    .card {
+        width: calc(50% - 12px);
+    }
+
+    .card img {
+        height: 190px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+
+    .price {
+        font-size: 21px;
+    }
+
+    .total {
+        margin: 20px 10px;
+    }
+
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        font-size: 23px;
+        padding: 16px;
+    }
+
+    .back-btn {
+        margin: 15px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+        border-radius: 15px;
+    }
+
+    .card img {
+        height: 210px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 22px;
+    }
+
+    .qty {
+        gap: 20px;
+    }
+
+    .qty-btn {
+        padding: 9px 13px;
+    }
+
+    .remove-btn {
+        font-size: 13px;
+    }
+
+    .total {
+        margin: 25px 10px;
+    }
+
+    .total h2 {
+        font-size: 22px;
+    }
+
+    .buy-btn {
+        font-size: 16px;
+        padding: 13px 25px;
+        margin: 15px;
+    }
+
+    .empty {
+        font-size: 22px;
+        margin-top: 60px;
+    }
+
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 360px) {
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .total h2 {
+        font-size: 19px;
+    }
+
+    .buy-btn {
+        font-size: 14px;
+    }
+
+}
 </style>
 </head>
 <body>

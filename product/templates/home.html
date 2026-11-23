@@ -346,6 +346,325 @@ footer{
     padding:18px;
     margin-top:50px;
 }
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Prevent horizontal scrolling */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+}
+
+/* Large tablets and small laptops */
+@media (max-width: 1200px) {
+
+    header {
+        padding: 20px 30px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .search {
+        width: 40%;
+    }
+
+    .main-content {
+        gap: 20px;
+    }
+
+    .side-nav {
+        width: 190px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .hero {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 25px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 10px 15px;
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .topbar a {
+        margin-left: 8px;
+    }
+
+    header {
+        padding: 18px;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .search {
+        width: 100%;
+        order: 3;
+    }
+
+    .icons {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .icons a {
+        font-size: 14px;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        gap: 15px;
+    }
+
+    .side-nav {
+        position: static;
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 8px;
+        gap: 5px;
+        margin: 0;
+    }
+
+    .side-nav a {
+        white-space: nowrap;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .side-nav a:hover {
+        padding-left: 12px;
+    }
+
+    .hero {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .hero-image img {
+        width: 200px;
+        max-height: 220px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px;
+    }
+
+    .feature {
+        padding: 20px 10px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin: 30px 20px 15px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .info {
+        padding: 12px;
+    }
+
+    .info h3 {
+        font-size: 17px;
+    }
+
+    .price {
+        font-size: 22px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px 5px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+
+    .topbar {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .topbar a {
+        margin-left: 5px;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .search input {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .search button {
+        width: 50px;
+    }
+
+    .icons {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .icons a {
+        font-size: 13px;
+    }
+
+    .side-nav a {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+        height: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        width: 180px;
+        max-height: 180px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 12px;
+    }
+
+    .feature {
+        padding: 15px 8px;
+    }
+
+    .feature i {
+        font-size: 25px;
+    }
+
+    .feature h3 {
+        font-size: 14px;
+    }
+
+    .feature p {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 21px;
+        margin: 25px 12px 10px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .info {
+        padding: 10px;
+    }
+
+    .info h3 {
+        font-size: 14px;
+    }
+
+    .rating {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 19px;
+    }
+
+    .price del {
+        font-size: 12px;
+        margin-left: 3px;
+    }
+
+    .wishlist-btn {
+        width: 95%;
+        font-size: 11px;
+        padding: 10px 4px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 10px 4px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
 
 </style>
 
